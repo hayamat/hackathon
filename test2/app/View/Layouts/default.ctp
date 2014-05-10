@@ -1,40 +1,30 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
-<!--[if IE 9 ]><html class="ie ie9" lang="en"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<html lang="en"> 
 <head>
-
 	<!-- Basic Page Needs -->
 	<meta charset="utf-8">
 	<title>Q&A</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-	
+	<?php
+	echo $this->fetch('css');
+	echo $this->fetch('meta');
+	echo $this->fetch('script');
+	?>
 	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-	<!-- Main Style -->
-	<link rel="stylesheet" href="./style.css">
-	
 	<!-- Skins -->
-	<link rel="stylesheet" href="./css/skins/strong_cyan.css">
-	
-	<!-- Responsive Style -->
-	<link rel="stylesheet" href="./css/responsive.css">
-	
-	<!-- Favicons -->
-	<link rel="shortcut icon" href="./images/favicon.png">
-  
+	<?php
+	 echo $this->Html->css('base.css');
+	 echo $this->Html->css('lists.css');
+	 echo $this->Html->css('bootstrap.min.css');
+	 echo $this->Html->css('prettyPhoto.css');
+	 echo $this->Html->css('font-awesome/css/font-awesome.min.css');
+	 echo $this->Html->css('fontello/css/fontello.css');
+	echo $this->Html->css('style'); 
+	echo $this->Html->css('skins/strong_cyan');
+echo $this->Html->css('responsive.css');
+	 ?> 
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>
 <body>
-
-		<div id="content">
-
-			<?php echo $this->Session->flash(); ?>
-
-			<?php echo $this->fetch('content'); ?>
-		</div>
-
-	<?php echo $this->element('sql_dump'); ?>
+		<?php echo $this->fetch('content'); ?>
 </body>
 </html>

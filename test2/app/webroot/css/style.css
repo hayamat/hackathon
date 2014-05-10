@@ -541,6 +541,11 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 	font-size: 13px !important;
 	line-height: 22px;
 }
+.error-login{
+	position: relative;
+	float: left;
+	color: red;
+}
 .ask-me .col-md-12 p {
 	margin-bottom: 30px !important;
 }
@@ -1946,9 +1951,22 @@ div[class*="slider_shadow"]:before, div[class^="header_shadow"] {
 	font-weight: bold;
 	padding-left: 10px;
 }
-button_vote{
-	
+.button_vote{
+	padding-top: 15px;
+	width: 100%;
+	position: relative;
+	margin-left: 440px;
 }
+.poll_results{
+	width: 250px;
+}
+
+.radio-poll{
+	width: 250px;
+	position: relative;
+	margin-left: 100px;
+}
+
 .widget_social li i {
 	float: right;
 	font-size: 37.5px;
@@ -4415,12 +4433,25 @@ h2 [class^="icons-"], h2 [class*=" icons-"] {
 	display: inline-block;
 }
 .progressbar-left {
+	position: relative;
+	/*height: 400px;*/
+	width: 220px;
 	float: left;
-	width: auto;
+	margin-left: 250px;
+	margin-top:60px; 
+}
+.q-detail{
+	width: 100%;
+	position: relative;
+	margin-left: 50px;
 }
 .progressbar-right {
+	position: relative;
+	/*height: 400px;*/
+	width: 220px;
 	float: right;
-	width: auto;
+	margin-right: -250px; 
+	margin-top:60px; 
 }
 /* Callout */
 .callout_warp {

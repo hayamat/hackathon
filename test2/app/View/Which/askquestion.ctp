@@ -100,6 +100,7 @@
 			<nav class="header-top-nav">
 				<ul>
 					<li><a href="login.html" id="login-panel"><i class="icon-user"></i>ログイン</a></li>
+					<li><div class="error-login">*idまたぱすわー</div></a>
 				</ul>
 			</nav>
 		</section><!-- End container -->
@@ -257,23 +258,4 @@
 </div><!-- End wrap -->
 
 <div class="go-up"><i class="icon-chevron-up"></i></div>
-
-<!-- js -->
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-ui-1.10.3.custom.min.js"></script>
-<script src="js/jquery.easing.1.3.min.js"></script>
-<script src="js/html5.js"></script>
-<script src="js/twitter/jquery.tweet.js"></script>
-<script src="js/jflickrfeed.min.js"></script>
-<script src="js/jquery.inview.min.js"></script>
-<script src="js/jquery.tipsy.js"></script>
-<script src="js/tabs.js"></script>
-<script src="js/jquery.flexslider.js"></script>
-<script src="js/jquery.prettyPhoto.js"></script>
-<script src="js/jquery.carouFredSel-6.2.1-packed.js"></script>
-<script src="js/jquery.scrollTo.js"></script>
-<script src="js/jquery.nav.js"></script>
-<script src="js/tags.js"></script>
-<script src="js/jquery.bxslider.min.js"></script>
-<script src="js/custom.js"></script>
-<!-- End js -->
+<!-- js --><?phpecho $this->Html->script('jquery.min');echo $this->Html->script('jquery-ui-1.10.3.custom.min');echo $this->Html->script('jquery.easing.1.3.min');echo $this->Html->script('html5');echo $this->Html->script('twitter/jquery.tweet');echo $this->Html->script('jflickrfeed.min');echo $this->Html->script('jquery.inview.min');echo $this->Html->script('jquery.tipsy');echo $this->Html->script('tabs');echo $this->Html->script('jquery.flexslider');echo $this->Html->script('jquery.prettyPhoto');echo $this->Html->script('jquery.carouFredSel-6.2.1-packed');echo $this->Html->script('jquery.scrollTo');echo $this->Html->script('jquery.nav');echo $this->Html->script('tags');echo $this->Html->script('jquery.bxslider.min.js');echo $this->Html->script('custom');?><!-- End js -->
