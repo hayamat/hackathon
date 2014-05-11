@@ -99,22 +99,14 @@
 		<section class="container clearfix">
 			<nav class="header-top-nav">
 				<ul>
-					<?php
-					$hantei = $this->Session->read('sid');
-					if($hantei){
-						?>
-						<li><a href="logouted"><i class="icon-user"></i>ログアウト</a></li><li><div class="error-login"><?php echo $this->Session->read('sname')?></div></li>
-						<?php }else{ ?>
-						<li><a href="login.html" id="login-panel"><i class="icon-user"></i>ログイン</a></li>
-						<?php }?>
-					
+					<li><a href="login.html" id="login-panel"><i class="icon-user"></i>ログイン</a></li>
 				</ul>
 			</nav>
 		</section><!-- End container -->
 	</div><!-- End header-top -->
 	<header id="header">
 		<section class="container clearfix">
-			<!--logo--><div class="logo"><a href="index.html"><img alt="" src="images/log.png"></a></div>
+			<!--logo--><div class="logo"><a href="index.html"><img alt="" src="images/logo.png"></a></div>
 			<nav class="navigation">
 				<ul>
 					<li class="ask_question"><a href="ask_question.html">聞く！</a></li>
@@ -155,36 +147,37 @@
 				<div class="page-content ask-question">
 					<div class="boxedtitle page-title"><h2>質問</h2></div>
 					<div class="form-style form-style-3" id="question-submit">
-						<form action="viewquestion" method="post">
+						<form>
 							<div class="form-inputs clearfix">
 								<p>
 									<label class="required">タイトル<span>*</span></label>
-									<input name="data[ques][titile]" type="text" id="question-title">
+									<input type="text" id="question-title">
 									<span class="form-description">質問のタイトル</span></div>
 									
 								</p>
 								
 								<p>
 									<label>タグ</label>
-									<input type="text" class="input" name="data[ques][tag]" id="question_tags" data-seperator=",">
-									<span class="form-description">例:彼氏　デート　｜<span class="color">説明文:</span>5つまでタグ付けできます！半角スペースで区切って入力してください！</span>
+									<input type="text" class="input" name="question_tags" id="question_tags" data-seperator=",">
+									<span class="form-description">例: <span class="color">説明文</span> .</span>
 								</p>
 								<p>
 									<label>写真1</label>
 								<div class="fileinputs">
-									<input type="file" class="file" name="">
+									<input type="file" class="file" id="file1">
 									<div class="fakefile">
-										<button type="button" class="button small margin_0"></button>
+										<button type="button" class=" button small margin_0"><div id="btnFileUpload1">選択してください</div></button>
 										<span><i class="icon-arrow-up"></i>選択</span>
+
 									</div>
 								</div>
 								</p>
 								<p>
 									<label>写真2</label>
 								<div class="fileinputs">
-									<input type="file" class="file" name="data[ques][blue]">
+									<input type="file" class="file" id="file2">
 									<div class="fakefile">
-										<button type="button" class="button small margin_0">選択してください。</button>
+										<button type="button" class="button small margin_0"><div id="btnFileUpload2">選択してください</div></button>
 										<span><i class="icon-arrow-up"></i>選択</span>
 									</div>
 								</div>
@@ -192,7 +185,7 @@
 								<div id="form-textarea">
 								<p>
 									<label class="required">質問内容<span>*</span></label>
-									<textarea id="question-details" name="data[ques][details]" aria-required="true" cols="58" rows="8"></textarea>
+									<textarea id="question-details" aria-required="true" cols="58" rows="8"></textarea>
 									<span class="form-description">質問内容を入力してください</span>
 								</p>
 							</div>
@@ -265,6 +258,7 @@
 </div><!-- End wrap -->
 
 <div class="go-up"><i class="icon-chevron-up"></i></div>
+
 
 <!-- js -->
 <?php

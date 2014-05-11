@@ -729,7 +729,15 @@ jQuery(document).ready(function($) {
 		});
 		return false;
 	});
-	
+
+
+$("#file1").change(function(){
+    $('#btnFileUpload1').text($("#file1").val().split('\\').pop());
+  });
+$("#file2").change(function(){
+    $('#btnFileUpload2').text($("#file2").val().split('\\').pop());
+  });
+
 	/* single question */
 	
 	jQuery(".share-inside").click(function () {
