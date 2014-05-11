@@ -681,7 +681,7 @@ jQuery(document).ready(function($) {
 	jQuery(".publish-question").click(function () {
 		var question_title = jQuery("#question_title").val();
 		jQuery.post("ask_question.html",question_title,function () {
-			window.location.href = "ask_question.html?question_title="+question_title;
+			window.location.href = "http://localhost/Dhackathon/hackathon/test2/askquestion?question_title="+question_title";
 			jQuery("#question-title").val(question_title);
 		})
 		return false;
