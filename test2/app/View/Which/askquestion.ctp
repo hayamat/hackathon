@@ -99,8 +99,15 @@
 		<section class="container clearfix">
 			<nav class="header-top-nav">
 				<ul>
-					<li><a href="login.html" id="login-panel"><i class="icon-user"></i>ログイン</a></li>
-					<li><div class="error-login">*idまたぱすわー</div></a>
+					<?php
+					$hantei = $this->Session->read('sid');
+					if($hantei){
+						?>
+						<li><a href="logouted"><i class="icon-user"></i>ログアウト</a></li><li><div class="error-login"><?php echo $this->Session->read('sname')?></div></li>
+						<?php }else{ ?>
+						<li><a href="login.html" id="login-panel"><i class="icon-user"></i>ログイン</a></li>
+						<?php }?>
+					
 				</ul>
 			</nav>
 		</section><!-- End container -->
@@ -148,26 +155,26 @@
 				<div class="page-content ask-question">
 					<div class="boxedtitle page-title"><h2>質問</h2></div>
 					<div class="form-style form-style-3" id="question-submit">
-						<form>
+						<form action="viewquestion" method="post">
 							<div class="form-inputs clearfix">
 								<p>
 									<label class="required">タイトル<span>*</span></label>
-									<input type="text" id="question-title">
+									<input name="data[ques][titile]" type="text" id="question-title">
 									<span class="form-description">質問のタイトル</span></div>
 									
 								</p>
 								
 								<p>
 									<label>タグ</label>
-									<input type="text" class="input" name="question_tags" id="question_tags" data-seperator=",">
-									<span class="form-description">例: <span class="color">説明文</span> .</span>
+									<input type="text" class="input" name="data[ques][tag]" id="question_tags" data-seperator=",">
+									<span class="form-description">例:彼氏　デート　｜<span class="color">説明文:</span>5つまでタグ付けできます！半角スペースで区切って入力してください！</span>
 								</p>
 								<p>
 									<label>写真1</label>
 								<div class="fileinputs">
-									<input type="file" class="file">
+									<input type="file" class="file" name="">
 									<div class="fakefile">
-										<button type="button" class="button small margin_0">選択してください。</button>
+										<button type="button" class="button small margin_0"></button>
 										<span><i class="icon-arrow-up"></i>選択</span>
 									</div>
 								</div>
@@ -175,7 +182,7 @@
 								<p>
 									<label>写真2</label>
 								<div class="fileinputs">
-									<input type="file" class="file">
+									<input type="file" class="file" name="data[ques][blue]">
 									<div class="fakefile">
 										<button type="button" class="button small margin_0">選択してください。</button>
 										<span><i class="icon-arrow-up"></i>選択</span>
@@ -185,7 +192,7 @@
 								<div id="form-textarea">
 								<p>
 									<label class="required">質問内容<span>*</span></label>
-									<textarea id="question-details" aria-required="true" cols="58" rows="8"></textarea>
+									<textarea id="question-details" name="data[ques][details]" aria-required="true" cols="58" rows="8"></textarea>
 									<span class="form-description">質問内容を入力してください</span>
 								</p>
 							</div>
@@ -258,4 +265,26 @@
 </div><!-- End wrap -->
 
 <div class="go-up"><i class="icon-chevron-up"></i></div>
-<!-- js --><?phpecho $this->Html->script('jquery.min');echo $this->Html->script('jquery-ui-1.10.3.custom.min');echo $this->Html->script('jquery.easing.1.3.min');echo $this->Html->script('html5');echo $this->Html->script('twitter/jquery.tweet');echo $this->Html->script('jflickrfeed.min');echo $this->Html->script('jquery.inview.min');echo $this->Html->script('jquery.tipsy');echo $this->Html->script('tabs');echo $this->Html->script('jquery.flexslider');echo $this->Html->script('jquery.prettyPhoto');echo $this->Html->script('jquery.carouFredSel-6.2.1-packed');echo $this->Html->script('jquery.scrollTo');echo $this->Html->script('jquery.nav');echo $this->Html->script('tags');echo $this->Html->script('jquery.bxslider.min.js');echo $this->Html->script('custom');?><!-- End js -->
+
+<!-- js -->
+<?php
+echo $this->Html->script('jquery.min');
+echo $this->Html->script('jquery-ui-1.10.3.custom.min');
+echo $this->Html->script('jquery.easing.1.3.min');
+echo $this->Html->script('html5');
+echo $this->Html->script('twitter/jquery.tweet');
+echo $this->Html->script('jflickrfeed.min');
+echo $this->Html->script('jquery.inview.min');
+echo $this->Html->script('jquery.tipsy');
+echo $this->Html->script('tabs');
+echo $this->Html->script('jquery.flexslider');
+echo $this->Html->script('jquery.prettyPhoto');
+echo $this->Html->script('jquery.carouFredSel-6.2.1-packed');
+echo $this->Html->script('jquery.scrollTo');
+echo $this->Html->script('jquery.nav');
+echo $this->Html->script('tags');
+echo $this->Html->script('jquery.bxslider.min.js');
+echo $this->Html->script('custom');
+?>
+<!-- End js -->
+
